@@ -1,6 +1,8 @@
+// This file wraps the public API
+// and add biz logic and authentication
+
 const Mutations = {
   async createItem(parent, args, context, info) {
-    console.log(args);
     // Instead of specificate all fields
     // we can use this approach
     let payload = { data: { ...args } };

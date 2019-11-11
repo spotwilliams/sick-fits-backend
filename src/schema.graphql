@@ -1,10 +1,19 @@
+# This file represents the public API to the DB Server
 #import * from './generated/prisma.graphql'
 
 type Mutation {
   createUser(name: String!): User!
-  createItem(data: ItemCreateInput): Item!
+  # createItem(data: ItemCreateInput): Item!
+  createItem(
+    title: String
+    description: String
+    price: Float
+    image: String
+    largeImage: String
+  ): Item!
 }
 
 type Query {
   users: [User]!
+  items: [Item]!
 }

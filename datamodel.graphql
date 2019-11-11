@@ -1,3 +1,4 @@
+# This is like a migration logic
 type User {
   id: ID! @id
   name: String!
