@@ -1,5 +1,5 @@
 # This file represents the public API to the DB Server
-#import * from './generated/prisma.graphql'
+# import * from './generated/prisma.graphql'
 
 type Mutation {
   createUser(name: String!): User!
