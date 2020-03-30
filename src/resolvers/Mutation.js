@@ -13,7 +13,7 @@ const Mutations = {
 
     updateItem(parent, args, context, info) {
         // Spread the data
-        let updates = {...args};
+        const updates = {...args};
         // Remove the ID from updates
         delete updates.id;
         return context.db.mutation.updateItem(
