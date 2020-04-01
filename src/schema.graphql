@@ -2,8 +2,6 @@
 # import * from './generated/prisma.graphql'
 
 type Mutation {
-    createUser(name: String!): User!
-    # createItem(data: ItemCreateInput): Item!
     createItem(
         title: String
         description: String
@@ -20,6 +18,8 @@ type Mutation {
         image: String
         largeImage: String
     ): Item!
+
+    deleteItem(id: ID!): Item
 }
 
 type Query {

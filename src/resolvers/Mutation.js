@@ -1,5 +1,6 @@
 // This file wraps the public API
 // and add biz logic and authentication
+const {forwardTo} = require('prisma-binding');
 
 const Mutations = {
     async createItem(parent, args, context, info) {
@@ -25,16 +26,20 @@ const Mutations = {
             }, info);
     },
 
-    createUser(parent, args, context, info) {
-        global.users = global.users || [];
-        global.users.push(
-            (user = {
-                id: Math.random(),
-                name: args.name
-            })
-        );
-        return user;
-    }
+    async deleteItem(parent, args, context, info) {
+        // Create the where statement
+        const where = {id: args.id};
+        // 1. find the item
+        const item = await context.db.query.item({where}, `{ id title }`);
+        // 2. check owner and permissions
+        // todo
+        // 3. Delete the item
+        return context.db.mutation.deleteItem({where}, info);
+
+        // The first query has the `{ id title }` because we want to receive that information into our process, instead
+        // sending to the frontend.
+        // When we use info object, we send the information to the requester, in this case the frontend
+    },
 };
 
 module.exports = Mutations;
