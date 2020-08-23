@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Sat Oct 19 2019 08:28:34 GMT-0300 (-03)
+# timestamp: Sat May 16 2020 18:16:22 GMT-0300 (Argentina Standard Time)
 
 type AggregateItem {
   count: Int!
@@ -473,6 +473,15 @@ type PageInfo {
   endCursor: String
 }
 
+enum Permission {
+  ADMIN
+  USER
+  ITEM_CREATE
+  ITEM_UPDATE
+  ITEM_DELETE
+  PERMISSION_UPDATE
+}
+
 enum PrismaDatabase {
   default
 }
@@ -504,6 +513,7 @@ type User implements Node {
   password: String!
   resetToken: String
   resetTokenExpiry: Float
+  permissions: [Permission!]!
 }
 
 """A connection to a list of items."""
@@ -523,6 +533,11 @@ input UserCreateInput {
   password: String!
   resetToken: String
   resetTokenExpiry: Float
+  permissions: UserCreatepermissionsInput
+}
+
+input UserCreatepermissionsInput {
+  set: [Permission!]
 }
 
 """An edge in a connection."""
@@ -556,6 +571,7 @@ type UserPreviousValues {
   password: String!
   resetToken: String
   resetTokenExpiry: Float
+  permissions: [Permission!]!
 }
 
 type UserSubscriptionPayload {
@@ -603,6 +619,7 @@ input UserUpdateInput {
   password: String
   resetToken: String
   resetTokenExpiry: Float
+  permissions: UserUpdatepermissionsInput
 }
 
 input UserUpdateManyMutationInput {
@@ -611,6 +628,11 @@ input UserUpdateManyMutationInput {
   password: String
   resetToken: String
   resetTokenExpiry: Float
+  permissions: UserUpdatepermissionsInput
+}
+
+input UserUpdatepermissionsInput {
+  set: [Permission!]
 }
 
 input UserWhereInput {
