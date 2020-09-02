@@ -45,7 +45,7 @@ const Mutations = {
     // When we use info object, we send the information to the requester, in this case the frontend
   },
 
-  async singUp(parent, args, context, info) {
+  async signUp(parent, args, context, info) {
     // lowercase their email
     const email = args.email.toLowerCase();
     const password = await bcrypt.hash(args.password, 10);
