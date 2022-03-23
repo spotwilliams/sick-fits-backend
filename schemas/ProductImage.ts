@@ -17,7 +17,7 @@ export const ProductImage = list({
         }),
         altText: text(),
         product: relationship({
-            ref: 'Product.photo'
+            ref: 'Product.photos'
         })
     },
    ui: {

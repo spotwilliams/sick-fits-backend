@@ -11,7 +11,7 @@ export const products = [
     description: 'soo nice',
     status: 'AVAILABLE',
     price: 3423,
-    photo: {
+    photo: [{
       id: '5dfbed262849d7961377c2c0',
       filename: 'hondo.jpg',
       originalFilename: 'hondo.jpg',
@@ -37,7 +37,7 @@ export const products = [
           'https://res.cloudinary.com/wesbos/image/upload/v1576791335/sick-fits-keystone/5dfbed262849d7961377c2c0.jpg',
         original_filename: 'file',
       },
-    },
+    }],
     // createdBy: null,
     // updatedBy: null,
     // updatedAt_utc: '2020-12-19T21:35:35.739Z',
@@ -50,7 +50,7 @@ export const products = [
     description: 'Great shoes!',
     status: 'AVAILABLE',
     price: 5234,
-    photo: {
+    photo: [{
       id: '5e2a13f0689b2835ae71d1a5',
       filename: '270-camo-sunset.jpg',
       originalFilename: '270-camo-sunset.jpg',
@@ -76,7 +76,7 @@ export const products = [
           'https://res.cloudinary.com/wesbos/image/upload/v1579815920/sick-fits-keystone/5e2a13f0689b2835ae71d1a5.jpg',
         original_filename: 'file',
       },
-    },
+    }],
     // createdBy: '5de9a29642ca551f24c596ba',
     // updatedBy: '5de9a29642ca551f24c596ba',
     // updatedAt_utc: '2020-01-23T21:45:20.833Z',

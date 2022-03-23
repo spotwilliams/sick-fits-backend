@@ -10,13 +10,14 @@ export const Product = list({
                 displayMode: 'textarea'
             }
         }),
-        photo: relationship({
+        photos: relationship({
             ref: 'ProductImage.product',
+            many: true,
             ui: {
-                displayMode: 'cards',
-                cardFields: ['image', 'altText'],
-                inlineCreate: {fields: ['image', 'altText']},
-                inlineEdit: {fields: ['image', 'altText']},
+                displayMode: 'select',
+                // cardFields: ['image', 'altText'],
+                // inlineCreate: {fields: ['image', 'altText']},
+                // inlineEdit: {fields: ['image', 'altText']},
             }
         }),
         status: select({
