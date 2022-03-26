@@ -1,6 +1,4 @@
-.idea/
-.env
-obsolete
+.idea
 node_modules
-.vscode/
-.DS_Store
+.env
+.keystone
