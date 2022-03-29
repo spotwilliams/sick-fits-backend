@@ -55,5 +55,4 @@ export default withAuth(config({
     session: withItemData(statelessSessions(sessionConfig), {
         User: `id name email`
     }),
-    graphql:  { playground: true, apolloConfig: { introspection: true } }
 }));
